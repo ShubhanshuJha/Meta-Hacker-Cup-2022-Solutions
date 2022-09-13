@@ -1,21 +1,22 @@
-// Wrong
+// Was wrong, but I've corrected it
 import java.io.*;
 import java.util.*;
 import static java.lang.Math.*;
 import static java.lang.System.*;
 
 public class Consecutive_Cuts_Chapter1 implements Runnable {
-	final String[] result = {"YES", "NO"};
+    final String[] result = {"YES", "NO"};
     private final void solution() throws IOException {
-        InputReader input = new InputReader(new FileReader(System.getenv("INPUT")));
-        PrintWriter output = new PrintWriter(new BufferedOutputStream(new FileOutputStream(System.getenv("OUTPUT"))));
-        // InputReader input = new InputReader(in);
-        // PrintWriter output = new PrintWriter(new BufferedOutputStream(out));
+        // InputReader input = new InputReader(new FileReader("D:\\Competitive Programming\\consecutive_cuts_chapter_1_input.txt"));
+        // InputReader input = new InputReader(new FileReader(System.getenv("INPUT")));
+        // PrintWriter output = new PrintWriter(new BufferedOutputStream(new FileOutputStream(System.getenv("OUTPUT"))));
+        InputReader input = new InputReader(in);
+        PrintWriter output = new PrintWriter(new BufferedOutputStream(out));
 
         short test = input.nextShort();
         for (int t = 1; t <= test; t++) {
-        	int N = input.nextInt(),
-        		K = input.nextInt();
+            int N = input.nextInt(),
+                K = input.nextInt();
             int[] arrA = input.readIntArray();
             int[] arrB = input.readIntArray();
             int idx = 0;
@@ -44,8 +45,7 @@ public class Consecutive_Cuts_Chapter1 implements Runnable {
                     } else if (N == 2) {
                         idx = K > 2 && (K & 1) == 1 ? 0 : 1;
                     } else {
-                        K %= N;
-                        idx = K <= selIdx ? 0 : 1;
+                        idx = 0;
                     }
                 }
             }
